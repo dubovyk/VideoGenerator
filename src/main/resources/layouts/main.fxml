@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.control.ComboBox?>
+<VBox fx:id="root" fx:controller="com.dubovyk.VideoMaker.Controllers.ControllerMain"
+      xmlns:fx="http://javafx.com/fxml" stylesheets="@../css/main.css">
+    <padding><Insets top="5" right="5" bottom="5" left="5" /></padding>
+    <MenuBar fx:id="menuBar">
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="New"/>
+                    <MenuItem text="Open" onAction="#handleOpenFile">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Import Music" onAction="#handleImportMusic">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="DOWN" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem text="Import Video" onAction="#handleImportVideo">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit" onAction="#handleExit">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                </items>
+            </Menu>
+            <Menu text="Options">
+                <items>
+                    <MenuItem text="Log In"/>
+                    <MenuItem text="Options"/>
+                </items>
+            </Menu>
+            <Menu text="Proceed">
+                <items>
+                    <MenuItem text="Create video" onAction="#handleProcess">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem text="Create and Upload">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="DOWN" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                </items>
+            </Menu>
+            <Menu text="Help">
+                <items>
+                    <MenuItem text="About">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                        </accelerator>
+                    </MenuItem>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <GridPane fx:id="settingsGrid" prefHeight="${root.height}" prefWidth="${root.width}" hgap="20" vgap="20">
+        <padding><Insets top="5" right="25" bottom="5" left="25" /></padding>
+
+        <Label fx:id="titleLabel" styleClass="label" text="Title" prefWidth="${0.2 * settingsGrid.prefWidth}"
+               GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+        <TextField fx:id="titleField" prefWidth="${0.6 * settingsGrid.prefWidth}" styleClass="inputField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label styleClass="label" text="Description"
+               GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+        <TextArea fx:id="descriptionField" prefHeight="${0.6 * settingsGrid.height}" styleClass="inputField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label styleClass="label" text="Video width"
+               GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+        <TextField fx:id="widthField" styleClass="inputField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label styleClass="label" text="Video height"
+               GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+        <TextField fx:id="heightField" styleClass="inputField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Intro" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+
+        <ComboBox fx:id="introSelector" prefWidth="${settingsGrid.width}"
+                  GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="Outro" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+        <ComboBox fx:id="outroSelector" prefWidth="${settingsGrid.width}"
+                  GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+        <Label text="Music" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+
+        <ComboBox fx:id="musicSelector" prefWidth="${settingsGrid.width}"
+                  GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    </GridPane>
+</VBox>

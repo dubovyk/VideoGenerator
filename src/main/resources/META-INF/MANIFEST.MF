@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Class-Path: ffmpeg-0.6.1.jar guava-20.0.jar slf4j-api-1.7.21.jar model
+ mapper-0.7.7.jar gson-2.8.0.jar humble-video-arch-i686-pc-linux-gnu6-
+ 0.2.1.jar humble-video-all-0.2.1.jar commons-io-2.5.jar humble-video-
+ arch-x86_64-pc-linux-gnu6-0.2.1.jar humble-video-arch-x86_64-apple-da
+ rwin12-0.2.1.jar jcodec-0.1.9.jar jcodec-javase-0.1.9.jar commons-lan
+ g3-3.5.jar humble-video-arch-x86_64-w64-mingw32-0.2.1.jar humble-vide
+ o-arch-i686-apple-darwin12-0.2.1.jar humble-video-arch-i686-w64-mingw
+ 32-0.2.1.jar humble-video-noarch-0.2.1.jar
+Main-Class: com.dubovyk.VideoMaker.Main
+
